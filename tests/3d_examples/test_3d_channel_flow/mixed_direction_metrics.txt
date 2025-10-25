@@ -1,0 +1,13 @@
+flow_direction_initial = +1.0
+flow_direction_body = -1.0
+u_peak_signed = -1.509636 at t = 99.712 s
+abs_peak = 1.509636
+steady_mean_signed = -1.492785 (samples=39)
+steady_mean_abs = 1.492785
+center_max_abs_err = 0.010294
+center_rms_err = 0.007201
+wall_rms = 0.003499
+max |v_y| = 1.147433e-02
+max |v_z| = 9.746210e-03
+wall_mean_abs_err = 2.266475e-03
+wall_max_abs_err = 8.539005e-03

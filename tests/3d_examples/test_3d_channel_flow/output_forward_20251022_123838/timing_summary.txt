@@ -1,0 +1,6 @@
+=== run @ 2025-10-21 18:16:08 ===
+simulation_end_time = 100 s
+wall_time_tickcount = 1762.45 s
+wall_time_steady_clock = 1875.63 s
+finish_at = 2025-10-21 18:47:24
+

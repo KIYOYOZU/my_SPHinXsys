@@ -1,0 +1,10 @@
+flow_direction = -1.0
+u_peak_signed = -1.530483 at t = 96.453 s
+abs_peak = 1.530483
+steady_mean_signed = -1.526504 (samples=39)
+steady_mean_abs = 1.526504
+wall_rms = 0.018195
+max |v_y| = 9.689828e-03
+max |v_z| = 1.084789e-02
+wall_mean_abs_err = 1.703149e-02
+wall_max_abs_err = 2.737091e-02

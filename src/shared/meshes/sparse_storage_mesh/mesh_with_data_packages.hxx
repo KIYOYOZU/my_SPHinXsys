@@ -102,7 +102,7 @@ void MeshWithGridDataPackages<PKG_SIZE>::
         findVariableByName<DataType, ContainerType>(variable_set, variable_name);
     if (listed_variable == nullptr)
     {
-        constexpr int type_index = DataTypeIndex<DataType>::value;
+        constexpr std::size_t type_index = static_cast<std::size_t>(DataTypeIndex<DataType>::value);
         std::get<type_index>(variable_set).push_back(variable);
     }
 }

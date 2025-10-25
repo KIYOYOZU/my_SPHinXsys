@@ -48,8 +48,9 @@ int main(int ac, char *av[])
     //----------------------------------------------------------------------
     //	Creating body, materials and particles.
     //----------------------------------------------------------------------
-    RealBody airfoil(sph_system, makeShared<ImportModel>("AirFoil"));
+    FluidBody airfoil(sph_system, makeShared<ImportModel>("AirFoil"));
     airfoil.defineAdaptation<ParticleRefinementNearSurface>(1.15, 1.0, 3);
+    airfoil.defineClosure<WeaklyCompressibleFluid, Viscosity>(ConstructArgs(1.0, 100.0), 0.0);
     airfoil.defineBodyLevelSetShape()->cleanLevelSet()->writeLevelSet(sph_system);
     airfoil.generateParticles<BaseParticles, Lattice, Adaptive>();
     //----------------------------------------------------------------------
@@ -57,6 +58,9 @@ int main(int ac, char *av[])
     //----------------------------------------------------------------------
     BodyStatesRecordingToVtp airfoil_recording_to_vtp(airfoil);
     airfoil_recording_to_vtp.addToWrite<Real>(airfoil, "SmoothingLengthRatio");
+    airfoil_recording_to_vtp.addToWrite<Vecd>(airfoil, "Velocity");
+    airfoil_recording_to_vtp.addToWrite<Vecd>(airfoil, "Velocity");
+    airfoil_recording_to_vtp.addToWrite<Vecd>(airfoil, "Velocity");
     MeshRecordingToPlt cell_linked_list_recording(sph_system, airfoil.getCellLinkedList());
     //----------------------------------------------------------------------
     //	Define body relation map.

@@ -132,10 +132,10 @@ void poiseuille_flow(const Real resolution_ref, const Real resolution_shell, con
     //----------------------------------------------------------------------
     //	Geometry parameters for shell.
     //----------------------------------------------------------------------
-    const int number_of_particles = 10;
+    const int number_of_particles = 15;
     const Real inflow_length = resolution_ref * 10.0; // Inflow region
     const Real wall_thickness = resolution_ref * 4.0;
-    const int SimTK_resolution = 20;
+    const int SimTK_resolution = 25;
     const Vec3d translation_fluid(0., full_length * 0.5, 0.);
 
     //----------------------------------------------------------------------
@@ -399,7 +399,7 @@ void poiseuille_flow(const Real resolution_ref, const Real resolution_shell, con
 
 TEST(poiseuille_flow, 10_particles)
 { // for CI
-    const int number_of_particles = 10;
+    const int number_of_particles = 20;
     const Real resolution_ref = diameter / number_of_particles;
     const Real resolution_shell = 0.5 * resolution_ref;
     const Real shell_thickness = 0.5 * resolution_shell;
